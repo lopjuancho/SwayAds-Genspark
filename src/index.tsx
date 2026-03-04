@@ -194,28 +194,34 @@ function landingPage(): string {
       font-weight: 900; font-size: 14px; color: #fff;
     }
 
-    /* YouTube modal */
-    #yt-modal {
+    /* Video modal */
+    #video-modal {
       display: none; position: fixed; inset: 0; z-index: 9999;
-      background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
       align-items: center; justify-content: center;
+      padding: 20px;
     }
-    #yt-modal.open { display: flex; }
-    #yt-modal .modal-box {
-      position: relative; width: 90vw; max-width: 900px;
-      aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 0 80px rgba(123,47,247,0.5);
+    #video-modal.open { display: flex; }
+    #video-modal .modal-box {
+      position: relative; width: 90vw; max-width: 960px;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(123,47,247,0.5),
+                  0 0 80px rgba(123,47,247,0.35),
+                  0 40px 100px rgba(0,0,0,0.7);
     }
-    #yt-modal iframe { width:100%; height:100%; border:0; }
-    #yt-modal .close-btn {
-      position: absolute; top: -44px; right: 0;
+    #video-modal video {
+      width: 100%; display: block;
+      border-radius: 20px; background: #000;
+    }
+    #video-modal .close-btn {
+      position: absolute; top: -48px; right: 0;
       background: rgba(255,255,255,0.15); border: none;
-      color: #fff; width: 36px; height: 36px; border-radius: 50%;
-      cursor: pointer; font-size: 18px; display:flex;
-      align-items:center; justify-content:center;
-      transition: background 0.2s;
+      color: #fff; width: 38px; height: 38px; border-radius: 50%;
+      cursor: pointer; font-size: 18px; display: flex;
+      align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
     }
-    #yt-modal .close-btn:hover { background: rgba(255,255,255,0.3); }
+    #video-modal .close-btn:hover { background: rgba(255,255,255,0.3); transform: rotate(90deg); }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -1081,26 +1087,30 @@ function landingPage(): string {
       <!-- Video Player (3/5 width) -->
       <div class="lg:col-span-3 reveal">
         <div class="video-wrapper" id="video-container">
-          <!-- Thumbnail / poster -->
-          <div id="video-thumbnail" class="relative cursor-pointer" onclick="openVideoModal('YOUR_YOUTUBE_VIDEO_ID')">
-            <img
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&h=506&fit=crop&crop=center"
-              alt="SwayAds Demo Video"
+          <!-- Native HTML5 video with poster frame -->
+          <div class="relative cursor-pointer" id="video-thumbnail" onclick="openVideoModal()">
+            <!-- Video element (muted autoplay for thumbnail preview) -->
+            <video
+              id="preview-video"
               class="w-full aspect-video object-cover block"
-            />
+              muted
+              playsinline
+              preload="metadata"
+              src="https://firebasestorage.googleapis.com/v0/b/plai-v3.appspot.com/o/Resource%2Fresource%20tab_7_%20product%20overview.mp4?alt=media&token=ccbb5611-0ea3-49a3-a27a-064c52022fe4#t=0.1"
+            ></video>
             <!-- Dark overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none"></div>
             <!-- Bottom caption -->
-            <div class="absolute bottom-5 left-5 right-5">
-              <p class="text-white font-bold text-base md:text-lg">How to Launch Your First Ad in 5 Minutes</p>
-              <p class="text-white/60 text-sm mt-1">SwayAds · AI-Powered Advertising Platform</p>
+            <div class="absolute bottom-5 left-5 right-16 pointer-events-none">
+              <p class="text-white font-bold text-base md:text-lg drop-shadow">SwayAds Product Overview</p>
+              <p class="text-white/60 text-sm mt-1">AI-Powered Advertising Platform · Full Demo</p>
             </div>
-            <!-- Duration badge -->
-            <div class="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">
-              2:47
+            <!-- HD badge -->
+            <div class="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm pointer-events-none">
+              HD
             </div>
             <!-- Play button -->
-            <button class="play-btn" onclick="openVideoModal('YOUR_YOUTUBE_VIDEO_ID')">
+            <button class="play-btn" onclick="openVideoModal()">
               <i class="fas fa-play"></i>
             </button>
           </div>
@@ -1194,16 +1204,21 @@ function landingPage(): string {
   </div>
 </section>
 
-<!-- YouTube Modal -->
-<div id="yt-modal" onclick="closeVideoModal(event)">
+<!-- Video Modal -->
+<div id="video-modal" onclick="closeVideoModal(event)">
   <div class="modal-box">
     <button class="close-btn" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
-    <iframe
-      id="yt-iframe"
+    <video
+      id="modal-video"
+      controls
+      autoplay
+      playsinline
+      preload="none"
       src=""
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+      style="max-height:85vh"
+    >
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 
@@ -1680,33 +1695,45 @@ function landingPage(): string {
     }
   }
 
-  // ── Video modal ──
-  function openVideoModal(videoId) {
-    // If a real YouTube ID is provided, embed it; otherwise open YouTube search
-    const modal  = document.getElementById('yt-modal');
-    const iframe = document.getElementById('yt-iframe');
-    if (!videoId || videoId === 'YOUR_YOUTUBE_VIDEO_ID') {
-      // No video yet — open my.swayads.com as demo fallback
-      window.open('https://my.swayads.com', '_blank');
-      return;
-    }
-    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+  // ── Video modal (native HTML5 MP4) ──
+  const VIDEO_SRC = 'https://firebasestorage.googleapis.com/v0/b/plai-v3.appspot.com/o/Resource%2Fresource%20tab_7_%20product%20overview.mp4?alt=media&token=ccbb5611-0ea3-49a3-a27a-064c52022fe4';
+
+  function openVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const vid   = document.getElementById('modal-video');
+    vid.src = VIDEO_SRC;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    vid.play().catch(() => {});
   }
 
   function closeVideoModal(e) {
-    if (e && e.target !== document.getElementById('yt-modal') && !e.target.closest('.close-btn')) return;
-    const modal  = document.getElementById('yt-modal');
-    const iframe = document.getElementById('yt-iframe');
+    // Only close if clicking the dark backdrop or the X button
+    if (e && e.target !== document.getElementById('video-modal') && !e.target.closest('.close-btn')) return;
+    const modal = document.getElementById('video-modal');
+    const vid   = document.getElementById('modal-video');
     modal.classList.remove('open');
-    iframe.src = '';
+    vid.pause();
+    vid.src = '';
     document.body.style.overflow = '';
   }
 
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeVideoModal({ target: document.getElementById('yt-modal') });
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('video-modal');
+      if (modal.classList.contains('open')) {
+        closeVideoModal({ target: modal });
+      }
+    }
   });
+
+  // ── Preview: show first frame on hover ──
+  const previewVid = document.getElementById('preview-video');
+  if (previewVid) {
+    previewVid.addEventListener('loadedmetadata', () => {
+      previewVid.currentTime = 0.1;
+    });
+  }
 
   // ── Scroll reveal ──
   const observer = new IntersectionObserver((entries) => {
