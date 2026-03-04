@@ -116,6 +116,106 @@ function landingPage(): string {
 
     /* Number counter */
     .counter { font-variant-numeric: tabular-nums; }
+
+    /* ── Logo ── */
+    .logo-img { height: 42px; width: auto; object-fit: contain; display: block; }
+    .logo-fallback { display: none; align-items: center; gap: 4px; }
+
+    /* ── Video Section ── */
+    .video-section-bg {
+      background: linear-gradient(160deg, #06000f 0%, #0e0530 50%, #060d1f 100%);
+      position: relative; overflow: hidden;
+    }
+    .video-section-bg::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(123,47,247,0.18) 0%, transparent 70%);
+    }
+
+    /* Video container with glow border */
+    .video-wrapper {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(123,47,247,0.4),
+                  0 0 60px rgba(123,47,247,0.25),
+                  0 30px 80px rgba(0,0,0,0.5);
+    }
+    .video-wrapper::before {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 20px;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #7B2FF7, #4F8EF7, #7B2FF7);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: 2; pointer-events: none;
+    }
+
+    /* Play button */
+    @keyframes pulse-ring {
+      0%   { transform: scale(1);   opacity: 0.6; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+    .play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 10;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .play-btn:hover { transform: translate(-50%,-50%) scale(1.1); background: #fff; }
+    .play-btn::before {
+      content: '';
+      position: absolute;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      animation: pulse-ring 1.8s ease-out infinite;
+    }
+    .play-btn i { color: #7B2FF7; font-size: 28px; margin-left: 4px; }
+
+    /* Step pills in video section */
+    .vstep {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 16px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .vstep:hover { background: rgba(123,47,247,0.12); border-color: rgba(123,47,247,0.4); }
+    .vstep-num {
+      width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 14px; color: #fff;
+    }
+
+    /* YouTube modal */
+    #yt-modal {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+    }
+    #yt-modal.open { display: flex; }
+    #yt-modal .modal-box {
+      position: relative; width: 90vw; max-width: 900px;
+      aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 0 80px rgba(123,47,247,0.5);
+    }
+    #yt-modal iframe { width:100%; height:100%; border:0; }
+    #yt-modal .close-btn {
+      position: absolute; top: -44px; right: 0;
+      background: rgba(255,255,255,0.15); border: none;
+      color: #fff; width: 36px; height: 36px; border-radius: 50%;
+      cursor: pointer; font-size: 18px; display:flex;
+      align-items:center; justify-content:center;
+      transition: background 0.2s;
+    }
+    #yt-modal .close-btn:hover { background: rgba(255,255,255,0.3); }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -129,8 +229,26 @@ function landingPage(): string {
       <!-- Logo -->
       <div class="flex items-center gap-2 flex-shrink-0">
         <a href="/" class="flex items-center gap-2">
-          <img src="https://www.genspark.ai/api/files/s/DvWz4Mf2" alt="SwayAds" class="h-9 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <span style="display:none" class="items-center text-2xl font-black"><span class="sway-text">Sway</span><span class="text-gray-900">Ads</span></span>
+          <img
+            src="https://www.genspark.ai/api/files/s/DvWz4Mf2"
+            alt="SwayAds"
+            class="logo-img"
+            onload="this.style.opacity='1'"
+            onerror="this.style.display='none'; document.getElementById('nav-logo-fallback').style.display='flex'"
+            style="opacity:0; transition:opacity 0.3s"
+          />
+          <span id="nav-logo-fallback" class="logo-fallback">
+            <svg width="140" height="38" viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="swayGrad" x1="0" y1="0" x2="100%" y2="0">
+                  <stop offset="0%" stop-color="#7B2FF7"/>
+                  <stop offset="100%" stop-color="4F8EF7"/>
+                </linearGradient>
+              </defs>
+              <text x="0" y="28" font-family="Inter,sans-serif" font-weight="900" font-size="28" fill="url(#swayGrad)">Sway</text>
+              <text x="72" y="28" font-family="Inter,sans-serif" font-weight="900" font-size="28" fill="#111">Ads</text>
+            </svg>
+          </span>
         </a>
       </div>
 
@@ -138,6 +256,10 @@ function landingPage(): string {
       <div class="hidden md:flex items-center gap-8">
         <a href="#features" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">Features</a>
         <a href="#how-it-works" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">How It Works</a>
+        <a href="#watch" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1">
+          <span class="w-4 h-4 rounded-full sway-gradient inline-flex items-center justify-center"><i class="fas fa-play text-white" style="font-size:7px;margin-left:1px"></i></span>
+          Watch Demo
+        </a>
         <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">Pricing</a>
         <a href="#testimonials" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">Reviews</a>
         <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">FAQ</a>
@@ -162,6 +284,9 @@ function landingPage(): string {
   <div id="mobile-menu" class="flex-col bg-white border-t border-gray-100 px-4 py-4 gap-4 md:hidden">
     <a href="#features" class="text-sm font-medium text-gray-700 py-2 border-b border-gray-50" onclick="toggleMenu()">Features</a>
     <a href="#how-it-works" class="text-sm font-medium text-gray-700 py-2 border-b border-gray-50" onclick="toggleMenu()">How It Works</a>
+    <a href="#watch" class="text-sm font-medium text-gray-700 py-2 border-b border-gray-50 flex items-center gap-2" onclick="toggleMenu()">
+      <i class="fas fa-play-circle text-purple-500"></i> Watch Demo
+    </a>
     <a href="#pricing" class="text-sm font-medium text-gray-700 py-2 border-b border-gray-50" onclick="toggleMenu()">Pricing</a>
     <a href="#testimonials" class="text-sm font-medium text-gray-700 py-2 border-b border-gray-50" onclick="toggleMenu()">Reviews</a>
     <a href="#faq" class="text-sm font-medium text-gray-700 py-2 border-b border-gray-50" onclick="toggleMenu()">FAQ</a>
@@ -932,6 +1057,157 @@ function landingPage(): string {
 </section>
 
 <!-- ============================================================
+     VIDEO SECTION — HOW IT WORKS
+     ============================================================ -->
+<section id="watch" class="video-section-bg py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+
+    <!-- Header -->
+    <div class="text-center mb-14 reveal">
+      <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-4">
+        <i class="fas fa-play-circle text-purple-400"></i>
+        <span class="text-white/80 text-sm font-medium">2-Minute Demo</span>
+      </span>
+      <h2 class="text-3xl md:text-5xl font-black text-white mt-2 mb-4 leading-tight">
+        See SwayAds in Action
+      </h2>
+      <p class="text-white/60 text-lg max-w-xl mx-auto">
+        Watch how a local business launches a complete ad campaign in under 5 minutes — no agency, no guesswork.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-10 items-center">
+
+      <!-- Video Player (3/5 width) -->
+      <div class="lg:col-span-3 reveal">
+        <div class="video-wrapper" id="video-container">
+          <!-- Thumbnail / poster -->
+          <div id="video-thumbnail" class="relative cursor-pointer" onclick="openVideoModal('YOUR_YOUTUBE_VIDEO_ID')">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&h=506&fit=crop&crop=center"
+              alt="SwayAds Demo Video"
+              class="w-full aspect-video object-cover block"
+            />
+            <!-- Dark overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <!-- Bottom caption -->
+            <div class="absolute bottom-5 left-5 right-5">
+              <p class="text-white font-bold text-base md:text-lg">How to Launch Your First Ad in 5 Minutes</p>
+              <p class="text-white/60 text-sm mt-1">SwayAds · AI-Powered Advertising Platform</p>
+            </div>
+            <!-- Duration badge -->
+            <div class="absolute top-4 right-4 bg-black/70 text-white text-xs font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm">
+              2:47
+            </div>
+            <!-- Play button -->
+            <button class="play-btn" onclick="openVideoModal('YOUR_YOUTUBE_VIDEO_ID')">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Video note -->
+        <div class="flex items-center justify-center gap-3 mt-5">
+          <div class="flex -space-x-2">
+            <img src="https://i.pravatar.cc/24?img=11" class="w-6 h-6 rounded-full border border-purple-500"/>
+            <img src="https://i.pravatar.cc/24?img=5"  class="w-6 h-6 rounded-full border border-purple-500"/>
+            <img src="https://i.pravatar.cc/24?img=8"  class="w-6 h-6 rounded-full border border-purple-500"/>
+          </div>
+          <p class="text-white/50 text-sm">Watched by <span class="text-white/80 font-semibold">4,200+ business owners</span></p>
+        </div>
+      </div>
+
+      <!-- Steps sidebar (2/5 width) -->
+      <div class="lg:col-span-2 space-y-4 reveal">
+
+        <div class="vstep">
+          <div class="vstep-num sway-gradient">1</div>
+          <div>
+            <p class="text-white font-bold text-sm mb-1">Enter Your Business Info</p>
+            <p class="text-white/50 text-xs leading-relaxed">Tell us your business type, city, and monthly budget. Takes less than 60 seconds.</p>
+            <span class="inline-block mt-2 text-xs text-purple-400 font-semibold">⏱ ~1 min</span>
+          </div>
+        </div>
+
+        <div class="vstep">
+          <div class="vstep-num bg-blue-500">2</div>
+          <div>
+            <p class="text-white font-bold text-sm mb-1">AI Generates Your Campaigns</p>
+            <p class="text-white/50 text-xs leading-relaxed">Our AI writes the ad copy, picks your audience, selects creatives and sets up tracking — instantly.</p>
+            <span class="inline-block mt-2 text-xs text-blue-400 font-semibold">⏱ ~2 min</span>
+          </div>
+        </div>
+
+        <div class="vstep">
+          <div class="vstep-num bg-green-500">3</div>
+          <div>
+            <p class="text-white font-bold text-sm mb-1">Review & Launch</p>
+            <p class="text-white/50 text-xs leading-relaxed">Approve with one click. Your ads go live on Facebook, Instagram & Google simultaneously.</p>
+            <span class="inline-block mt-2 text-xs text-green-400 font-semibold">⏱ ~30 sec</span>
+          </div>
+        </div>
+
+        <div class="vstep">
+          <div class="vstep-num" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">4</div>
+          <div>
+            <p class="text-white font-bold text-sm mb-1">AI Keeps Optimizing</p>
+            <p class="text-white/50 text-xs leading-relaxed">24/7 automated A/B testing and budget reallocation. Your cost per lead drops over time automatically.</p>
+            <span class="inline-block mt-2 text-xs text-yellow-400 font-semibold">⚡ Ongoing</span>
+          </div>
+        </div>
+
+        <a href="https://my.swayads.com" class="flex items-center justify-center gap-2 w-full btn-primary text-white font-bold py-3.5 rounded-xl text-sm shadow-lg mt-2">
+          <i class="fas fa-rocket"></i>
+          Try It Yourself — Free
+          <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Platform row -->
+    <div class="mt-14 text-center reveal">
+      <p class="text-white/30 text-xs uppercase tracking-widest font-semibold mb-5">Launches campaigns simultaneously on</p>
+      <div class="flex items-center justify-center gap-8 flex-wrap">
+        <div class="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+          <i class="fab fa-facebook-f text-blue-400 text-xl"></i>
+          <span class="text-sm font-semibold">Facebook</span>
+        </div>
+        <div class="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+          <i class="fab fa-instagram text-pink-400 text-xl"></i>
+          <span class="text-sm font-semibold">Instagram</span>
+        </div>
+        <div class="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+          <i class="fab fa-google text-red-400 text-xl"></i>
+          <span class="text-sm font-semibold">Google</span>
+        </div>
+        <div class="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+          <i class="fab fa-tiktok text-white/60 text-xl"></i>
+          <span class="text-sm font-semibold">TikTok <span class="text-xs text-purple-400">(soon)</span></span>
+        </div>
+        <div class="flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors">
+          <i class="fab fa-youtube text-red-500 text-xl"></i>
+          <span class="text-sm font-semibold">YouTube <span class="text-xs text-purple-400">(soon)</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- YouTube Modal -->
+<div id="yt-modal" onclick="closeVideoModal(event)">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
+    <iframe
+      id="yt-iframe"
+      src=""
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+
+<!-- ============================================================
      PRICING
      ============================================================ -->
 <section id="pricing" class="section-gray py-20 lg:py-28">
@@ -1286,8 +1562,25 @@ function landingPage(): string {
     <div class="grid md:grid-cols-4 gap-10 mb-12">
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-4">
-          <img src="https://www.genspark.ai/api/files/s/DvWz4Mf2" alt="SwayAds" class="h-8 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
-          <span style="display:none" class="items-center text-xl font-black"><span class="sway-text">Sway</span><span class="text-white">Ads</span></span>
+          <img
+            src="https://www.genspark.ai/api/files/s/DvWz4Mf2"
+            alt="SwayAds"
+            style="height:36px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
+            onload="this.style.opacity='1'"
+            onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex'"
+          />
+          <span id="footer-logo-fallback" style="display:none" class="items-center">
+            <svg width="130" height="34" viewBox="0 0 130 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="swayGrad2" x1="0" y1="0" x2="100%" y2="0">
+                  <stop offset="0%" stop-color="#7B2FF7"/>
+                  <stop offset="100%" stop-color="#4F8EF7"/>
+                </linearGradient>
+              </defs>
+              <text x="0" y="26" font-family="Inter,sans-serif" font-weight="900" font-size="25" fill="url(#swayGrad2)">Sway</text>
+              <text x="66" y="26" font-family="Inter,sans-serif" font-weight="900" font-size="25" fill="#ffffff">Ads</text>
+            </svg>
+          </span>
         </div>
         <p class="text-gray-400 text-sm leading-relaxed mb-4">AI-powered advertising platform helping local businesses compete and win online.</p>
         <div class="flex gap-4">
@@ -1386,6 +1679,34 @@ function landingPage(): string {
       mBtn.classList.remove('bg-purple-600','text-white'); mBtn.classList.add('text-gray-600');
     }
   }
+
+  // ── Video modal ──
+  function openVideoModal(videoId) {
+    // If a real YouTube ID is provided, embed it; otherwise open YouTube search
+    const modal  = document.getElementById('yt-modal');
+    const iframe = document.getElementById('yt-iframe');
+    if (!videoId || videoId === 'YOUR_YOUTUBE_VIDEO_ID') {
+      // No video yet — open my.swayads.com as demo fallback
+      window.open('https://my.swayads.com', '_blank');
+      return;
+    }
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoModal(e) {
+    if (e && e.target !== document.getElementById('yt-modal') && !e.target.closest('.close-btn')) return;
+    const modal  = document.getElementById('yt-modal');
+    const iframe = document.getElementById('yt-iframe');
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeVideoModal({ target: document.getElementById('yt-modal') });
+  });
 
   // ── Scroll reveal ──
   const observer = new IntersectionObserver((entries) => {
