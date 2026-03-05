@@ -98,9 +98,11 @@ function landingPage(): string {
     .faq-item details[open] .faq-icon { transform: rotate(45deg); }
     .faq-icon { transition: transform 0.3s; }
 
-    /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
+    /* Scroll reveal — only animate on first load, not between same-color sections */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* Sections that follow each other with same bg get no gap */
+    section + section { margin-top: 0; }
 
     /* Gradient border card */
     .gradient-border { position: relative; border-radius: 16px; }
@@ -236,51 +238,43 @@ function landingPage(): string {
       <div class="flex items-center gap-2 flex-shrink-0">
         <a href="/" class="flex items-center gap-2">
           <img
-            src="https://www.genspark.ai/api/files/s/DvWz4Mf2"
+            src="https://www.genspark.ai/api/files/s/fCLFvPGj"
             alt="SwayAds"
+            id="nav-logo-img"
             class="logo-img"
             onload="this.style.opacity='1'"
             onerror="this.style.display='none'; document.getElementById('nav-logo-fallback').style.display='flex'"
-            style="opacity:0; transition:opacity 0.3s"
+            style="opacity:0; transition:opacity 0.3s; height:44px; width:auto; filter:brightness(0) invert(1)"
           />
           <span id="nav-logo-fallback" class="logo-fallback">
-            <svg width="140" height="38" viewBox="0 0 140 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="swayGrad" x1="0" y1="0" x2="100%" y2="0">
-                  <stop offset="0%" stop-color="#7B2FF7"/>
-                  <stop offset="100%" stop-color="4F8EF7"/>
-                </linearGradient>
-              </defs>
-              <text x="0" y="28" font-family="Inter,sans-serif" font-weight="900" font-size="28" fill="url(#swayGrad)">Sway</text>
-              <text x="72" y="28" font-family="Inter,sans-serif" font-weight="900" font-size="28" fill="#111">Ads</text>
-            </svg>
+            <span class="text-2xl font-black"><span class="sway-text">Sway</span><span class="text-gray-900">Ads</span></span>
           </span>
         </a>
       </div>
 
       <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#features" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">Features</a>
-        <a href="#how-it-works" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">How It Works</a>
-        <a href="#watch" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors flex items-center gap-1">
+      <div class="hidden md:flex items-center gap-8" id="nav-links">
+        <a href="#features" class="text-sm font-medium text-white/80 hover:text-white transition-colors nav-link">Features</a>
+        <a href="#how-it-works" class="text-sm font-medium text-white/80 hover:text-white transition-colors nav-link">How It Works</a>
+        <a href="#watch" class="text-sm font-medium text-white/80 hover:text-white transition-colors nav-link flex items-center gap-1">
           <span class="w-4 h-4 rounded-full sway-gradient inline-flex items-center justify-center"><i class="fas fa-play text-white" style="font-size:7px;margin-left:1px"></i></span>
           Watch Demo
         </a>
-        <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">Pricing</a>
-        <a href="#testimonials" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">Reviews</a>
-        <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors">FAQ</a>
+        <a href="#pricing" class="text-sm font-medium text-white/80 hover:text-white transition-colors nav-link">Pricing</a>
+        <a href="#testimonials" class="text-sm font-medium text-white/80 hover:text-white transition-colors nav-link">Reviews</a>
+        <a href="#faq" class="text-sm font-medium text-white/80 hover:text-white transition-colors nav-link">FAQ</a>
       </div>
 
       <!-- CTA Buttons -->
       <div class="hidden md:flex items-center gap-3">
-        <a href="https://my.swayads.com" class="text-sm font-semibold text-gray-700 hover:text-purple-600 transition-colors px-4 py-2">Log In</a>
+        <a href="https://my.swayads.com" class="text-sm font-semibold text-white/80 hover:text-white transition-colors px-4 py-2 nav-link" id="nav-login">Log In</a>
         <a href="https://my.swayads.com" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg">
           Start Free Trial
         </a>
       </div>
 
       <!-- Mobile hamburger -->
-      <button id="menu-btn" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100" onclick="toggleMenu()">
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg text-white hover:bg-white/10" onclick="toggleMenu()">
         <i class="fas fa-bars text-xl"></i>
       </button>
     </div>
@@ -497,14 +491,60 @@ function landingPage(): string {
         <div class="text-gray-500 text-sm mt-1 font-medium">To Launch First Ad</div>
       </div>
     </div>
-    <!-- Platform logos -->
-    <div class="flex items-center justify-center gap-8 mt-10 flex-wrap opacity-40 grayscale">
-      <span class="text-3xl font-black text-blue-800">f</span>
-      <span class="text-2xl font-black" style="background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Instagram</span>
-      <span class="text-2xl font-black text-blue-500">G</span>
-      <span class="text-2xl font-black text-blue-700">in</span>
-      <span class="text-2xl font-black text-black">TikTok</span>
-      <span class="text-2xl font-black text-blue-400">Twitter</span>
+    <!-- Platform logos — proper colored icons -->
+    <div class="mt-10">
+      <p class="text-center text-gray-400 text-xs uppercase tracking-widest font-semibold mb-5">Launches ads on all major platforms</p>
+      <div class="flex items-center justify-center gap-6 flex-wrap">
+        <!-- Facebook -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1877F2] shadow-md group-hover:scale-110 transition-transform">
+            <i class="fab fa-facebook-f text-white text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Facebook</span>
+        </div>
+        <!-- Instagram -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+            <i class="fab fa-instagram text-white text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Instagram</span>
+        </div>
+        <!-- Google -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-white border border-gray-200 shadow-md group-hover:scale-110 transition-transform">
+            <svg viewBox="0 0 24 24" class="w-6 h-6"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">Google</span>
+        </div>
+        <!-- TikTok -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-black shadow-md group-hover:scale-110 transition-transform">
+            <i class="fab fa-tiktok text-white text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">TikTok</span>
+        </div>
+        <!-- LinkedIn -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#0A66C2] shadow-md group-hover:scale-110 transition-transform">
+            <i class="fab fa-linkedin-in text-white text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">LinkedIn</span>
+        </div>
+        <!-- YouTube -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#FF0000] shadow-md group-hover:scale-110 transition-transform">
+            <i class="fab fa-youtube text-white text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">YouTube</span>
+        </div>
+        <!-- X/Twitter -->
+        <div class="flex flex-col items-center gap-1.5 group">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-black shadow-md group-hover:scale-110 transition-transform">
+            <i class="fab fa-x-twitter text-white text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-400 font-medium">X / Twitter</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1578,23 +1618,14 @@ function landingPage(): string {
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <img
-            src="https://www.genspark.ai/api/files/s/DvWz4Mf2"
+            src="https://www.genspark.ai/api/files/s/fCLFvPGj"
             alt="SwayAds"
-            style="height:36px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
+            style="height:40px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
             onload="this.style.opacity='1'"
             onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex'"
           />
           <span id="footer-logo-fallback" style="display:none" class="items-center">
-            <svg width="130" height="34" viewBox="0 0 130 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="swayGrad2" x1="0" y1="0" x2="100%" y2="0">
-                  <stop offset="0%" stop-color="#7B2FF7"/>
-                  <stop offset="100%" stop-color="#4F8EF7"/>
-                </linearGradient>
-              </defs>
-              <text x="0" y="26" font-family="Inter,sans-serif" font-weight="900" font-size="25" fill="url(#swayGrad2)">Sway</text>
-              <text x="66" y="26" font-family="Inter,sans-serif" font-weight="900" font-size="25" fill="#ffffff">Ads</text>
-            </svg>
+            <span class="text-xl font-black"><span class="sway-text">Sway</span><span class="text-white">Ads</span></span>
           </span>
         </div>
         <p class="text-gray-400 text-sm leading-relaxed mb-4">AI-powered advertising platform helping local businesses compete and win online.</p>
@@ -1656,14 +1687,30 @@ function landingPage(): string {
      JAVASCRIPT
      ============================================================ -->
 <script>
-  // ── Navbar scroll effect ──
-  const navbar = document.getElementById('navbar');
+  // ── Navbar scroll + logo color ──
+  const navbar    = document.getElementById('navbar');
+  const navLogo   = document.getElementById('nav-logo-img');
+  const navLinks  = document.querySelectorAll('.nav-link');
+  const menuBtn   = document.getElementById('menu-btn');
+
+  function setNavDark() {
+    // Dark hero bg: white text + white logo
+    navbar.classList.remove('nav-scroll');
+    if (navLogo) navLogo.style.filter = 'brightness(0) invert(1)';
+    navLinks.forEach(l => { l.style.color = 'rgba(255,255,255,0.8)'; });
+    if (menuBtn) menuBtn.style.color = '#fff';
+  }
+  function setNavLight() {
+    // Scrolled: white bg + colored logo + dark text
+    navbar.classList.add('nav-scroll');
+    if (navLogo) navLogo.style.filter = 'none';
+    navLinks.forEach(l => { l.style.color = '#4b5563'; });
+    if (menuBtn) menuBtn.style.color = '#374151';
+  }
+
+  setNavDark(); // default on load
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      navbar.classList.add('nav-scroll');
-    } else {
-      navbar.classList.remove('nav-scroll');
-    }
+    window.scrollY > 20 ? setNavLight() : setNavDark();
   });
 
   // ── Mobile menu toggle ──
@@ -1735,15 +1782,24 @@ function landingPage(): string {
     });
   }
 
-  // ── Scroll reveal ──
+  // ── Scroll reveal ── (lower threshold so elements between sections always trigger)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // stop watching once visible
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+  // Immediately show any reveal elements already in viewport on load
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 
   // ── Smooth scroll for anchor links ──
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
