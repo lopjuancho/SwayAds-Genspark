@@ -400,13 +400,13 @@ function landingPage(): string {
         <!-- Tree Service Ad Card - top right -->
         <div class="ad-card bg-white w-52 absolute top-4 right-4 float-2 z-10">
           <div class="relative h-28 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=300&h=150&fit=crop&crop=center" alt="Tree Service" class="w-full h-full object-cover"/>
+            <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa90eb618c8df1281d50ae.jfif" alt="Tree Service" class="w-full h-full object-cover"/>
             <div class="absolute top-2 left-2">
               <span class="text-xs bg-blue-600 text-white px-1.5 py-0.5 rounded font-semibold">Sponsored</span>
             </div>
           </div>
           <div class="p-3">
-            <p class="text-xs font-bold text-gray-900">🌳 Martinez Tree Service</p>
+            <a href="https://reytreeservice.com" rel="dofollow" target="_blank" class="text-xs font-bold text-gray-900 hover:text-blue-600">🌳 Rey Tree Service</a>
             <p class="text-xs text-gray-500 mt-0.5">Free Estimates · Licensed & Insured</p>
             <div class="mt-2 text-xs text-blue-600 font-semibold">Call Now for 20% Off</div>
           </div>
@@ -415,7 +415,7 @@ function landingPage(): string {
         <!-- Lawn Care ad card - bottom left -->
         <div class="ad-card bg-white w-52 absolute bottom-8 left-0 float-3 z-10">
           <div class="relative h-28 overflow-hidden">
-            <img src="https://www.genspark.ai/api/files/s/m4Hea4hg" alt="Lawn Care" class="w-full h-full object-cover"/>
+            <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f20618c8d56441d1d1f.jfif" alt="Lawn Care" class="w-full h-full object-cover"/>
             <div class="absolute top-2 left-2">
               <span class="text-xs bg-green-600 text-white px-1.5 py-0.5 rounded font-semibold">Google Ad</span>
             </div>
@@ -706,7 +706,7 @@ function landingPage(): string {
             <!-- Template 1: Roofing -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://www.genspark.ai/api/files/s/ty4I74sU" alt="Roofing" class="w-full h-full object-cover"/>
+                <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f2036702f99410c3319.jfif" alt="Roofing" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Storm Damage? We Fix It Fast</p>
                 </div>
@@ -719,7 +719,7 @@ function landingPage(): string {
             <!-- Template 2: Party Rentals -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://www.genspark.ai/api/files/s/OHLR0Yxg" alt="Party Rentals" class="w-full h-full object-cover"/>
+                <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8ec036702f360f0c276a.png" alt="Tiky Jumps Party Rentals" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Book Your Party Today!</p>
                 </div>
@@ -732,7 +732,7 @@ function landingPage(): string {
             <!-- Template 3: Remodeling -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=200&h=120&fit=crop&crop=center" alt="Remodeling" class="w-full h-full object-cover"/>
+                <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f20618c8d5aa91d1d20.jfif" alt="Remodeling" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Transform Your Home This Fall</p>
                 </div>
@@ -745,7 +745,7 @@ function landingPage(): string {
             <!-- Template 4: Lawn Care -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=200&h=120&fit=crop&crop=bottom" alt="Lawn" class="w-full h-full object-cover"/>
+                <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f207bdf38526e92b945.jfif" alt="Lawn Care" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Get a Perfect Lawn Every Week</p>
                 </div>
@@ -861,7 +861,7 @@ function landingPage(): string {
       <!-- Tree Services -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=220&fit=crop&crop=center" alt="Tree Services" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa90eb618c8df1281d50ae.jfif" alt="Rey Tree Service Memphis" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Facebook Ad</span>
           </div>
@@ -871,16 +871,16 @@ function landingPage(): string {
         </div>
         <div class="p-5">
           <div class="flex items-center gap-2 mb-3">
-            <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm">M</div>
+            <div class="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-sm">R</div>
             <div>
-              <p class="text-white font-bold text-sm">Martinez Tree Experts</p>
-              <p class="text-white/40 text-xs">Sponsored · Dallas, TX</p>
+              <a href="https://reytreeservice.com" rel="dofollow" target="_blank" class="text-white font-bold text-sm hover:text-green-400">Rey Tree Service</a>
+              <p class="text-white/40 text-xs">Sponsored · Memphis, TN</p>
             </div>
           </div>
-          <h4 class="text-white font-bold text-sm leading-snug mb-1">🌳 Dallas's #1 Tree Service — FREE Estimate!</h4>
-          <p class="text-white/60 text-xs leading-relaxed">Storm damage? Overgrown trees? Our certified arborists are ready to help. Licensed, insured & trusted by 500+ homeowners. Call today!</p>
+          <h4 class="text-white font-bold text-sm leading-snug mb-1">🌳 Memphis's #1 Tree Service — FREE Estimate!</h4>
+          <p class="text-white/60 text-xs leading-relaxed">Storm damage? Overgrown trees? Our certified arborists are ready to help. Licensed, insured & trusted by 500+ homeowners in Memphis. Call today!</p>
           <div class="mt-4 flex items-center justify-between">
-            <div class="text-white/50 text-xs">📞 (214) 555-0193</div>
+            <a href="https://reytreeservice.com" rel="dofollow" target="_blank" class="text-white/50 text-xs hover:text-green-400">📞 reytreeservice.com</a>
             <button class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">Call Now</button>
           </div>
           <div class="mt-3 pt-3 border-t border-white/10 grid grid-cols-3 gap-2 text-center">
@@ -894,7 +894,7 @@ function landingPage(): string {
       <!-- Party Rentals -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://www.genspark.ai/api/files/s/OHLR0Yxg" alt="Party Rentals" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8ec036702f360f0c276a.png" alt="Tiky Jumps Memphis" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">Instagram</span>
           </div>
@@ -904,16 +904,16 @@ function landingPage(): string {
         </div>
         <div class="p-5">
           <div class="flex items-center gap-2 mb-3">
-            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm">F</div>
+            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm">T</div>
             <div>
-              <p class="text-white font-bold text-sm">FunTime Party Rentals</p>
-              <p class="text-white/40 text-xs">Sponsored · Houston, TX</p>
+              <a href="https://tikyjumps.com" rel="dofollow" target="_blank" class="text-white font-bold text-sm hover:text-purple-400">Tiky Jumps</a>
+              <p class="text-white/40 text-xs">Sponsored · Memphis, TN</p>
             </div>
           </div>
           <h4 class="text-white font-bold text-sm leading-snug mb-1">🎪 Make Your Event Unforgettable! Bounce Houses + More</h4>
-          <p class="text-white/60 text-xs leading-relaxed">Tables, chairs, tents, inflatables & more. Book your event today and get 10% off! Same-day delivery available. Houston's favorite rental company.</p>
+          <p class="text-white/60 text-xs leading-relaxed">Tables, chairs, tents, inflatables & more. Book your event today and get 10% off! Same-day delivery available. Memphis's favorite party rental company.</p>
           <div class="mt-4 flex items-center justify-between">
-            <div class="text-white/50 text-xs">📩 Book Online</div>
+            <a href="https://tikyjumps.com" rel="dofollow" target="_blank" class="text-white/50 text-xs hover:text-purple-400">🌐 tikyjumps.com</a>
             <button class="bg-purple-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">Get a Quote</button>
           </div>
           <div class="mt-3 pt-3 border-t border-white/10 grid grid-cols-3 gap-2 text-center">
@@ -927,7 +927,7 @@ function landingPage(): string {
       <!-- Roof Services -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://www.genspark.ai/api/files/s/ty4I74sU" alt="Roofing" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f2036702f99410c3319.jfif" alt="Storm Damage Roofing" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">Google Ad</span>
           </div>
@@ -960,7 +960,7 @@ function landingPage(): string {
       <!-- Lawn Care -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://www.genspark.ai/api/files/s/m4Hea4hg" alt="Lawn Care" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f20618c8d56441d1d1f.jfif" alt="Lawn Care" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Facebook Ad</span>
           </div>
@@ -993,7 +993,7 @@ function landingPage(): string {
       <!-- Remodeling -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&h=220&fit=crop&crop=center" alt="Remodeling" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8f2036702f24f60c331a.jfif" alt="Elite Remodeling" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">Instagram</span>
           </div>
@@ -1019,6 +1019,72 @@ function landingPage(): string {
             <div><p class="text-white font-bold text-sm">6.7k</p><p class="text-white/40 text-xs">Reach</p></div>
             <div><p class="text-white font-bold text-sm">412</p><p class="text-white/40 text-xs">Clicks</p></div>
             <div><p class="text-green-400 font-bold text-sm">41</p><p class="text-white/40 text-xs">Leads</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rey Tree Service 2nd card -->
+      <div class="glass rounded-2xl overflow-hidden feature-card">
+        <div class="relative">
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa90ebb2a2747e9cb64ed3.jfif" alt="Rey Tree Service Memphis" class="w-full h-44 object-cover"/>
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded">Google Ad</span>
+          </div>
+          <div class="absolute top-3 right-3">
+            <span class="bg-black/50 text-white text-xs px-2 py-0.5 rounded backdrop-blur-sm">🌳 Tree Services</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-white font-bold text-sm">R</div>
+            <div>
+              <a href="https://reytreeservice.com" rel="dofollow" target="_blank" class="text-white font-bold text-sm hover:text-green-400">Rey Tree Service</a>
+              <p class="text-white/40 text-xs">Sponsored · Memphis, TN</p>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-sm leading-snug mb-1">🌳 Tree Removal & Trimming — Free Same-Day Quote</h4>
+          <p class="text-white/60 text-xs leading-relaxed">Emergency tree removal, stump grinding, trimming & pruning. Fully licensed & insured. Serving Memphis & surrounding areas since 2010.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="https://reytreeservice.com" rel="dofollow" target="_blank" class="text-white/50 text-xs hover:text-green-400">🌐 reytreeservice.com</a>
+            <button class="bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg">Get Quote</button>
+          </div>
+          <div class="mt-3 pt-3 border-t border-white/10 grid grid-cols-3 gap-2 text-center">
+            <div><p class="text-white font-bold text-sm">3.1k</p><p class="text-white/40 text-xs">Reach</p></div>
+            <div><p class="text-white font-bold text-sm">241</p><p class="text-white/40 text-xs">Clicks</p></div>
+            <div><p class="text-green-400 font-bold text-sm">22</p><p class="text-white/40 text-xs">Calls</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tiky Jumps 2nd card -->
+      <div class="glass rounded-2xl overflow-hidden feature-card">
+        <div class="relative">
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa9212b2a274061db6700b.png" alt="Tiky Jumps Memphis" class="w-full h-44 object-cover"/>
+          <div class="absolute top-3 left-3 flex gap-2">
+            <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Facebook Ad</span>
+          </div>
+          <div class="absolute top-3 right-3">
+            <span class="bg-black/50 text-white text-xs px-2 py-0.5 rounded backdrop-blur-sm">🎉 Party Rentals</span>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold text-sm">T</div>
+            <div>
+              <a href="https://tikyjumps.com" rel="dofollow" target="_blank" class="text-white font-bold text-sm hover:text-yellow-400">Tiky Jumps</a>
+              <p class="text-white/40 text-xs">Sponsored · Memphis, TN</p>
+            </div>
+          </div>
+          <h4 class="text-white font-bold text-sm leading-snug mb-1">🎪 Bounce Houses, Tables & Tents — Book for Your Party!</h4>
+          <p class="text-white/60 text-xs leading-relaxed">Memphis's go-to party rental company. Inflatables, tables, chairs, tents & more. Affordable prices. Easy online booking. Reserve today!</p>
+          <div class="mt-4 flex items-center justify-between">
+            <a href="https://tikyjumps.com" rel="dofollow" target="_blank" class="text-white/50 text-xs hover:text-yellow-400">🌐 tikyjumps.com</a>
+            <button class="bg-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg">Book Now</button>
+          </div>
+          <div class="mt-3 pt-3 border-t border-white/10 grid grid-cols-3 gap-2 text-center">
+            <div><p class="text-white font-bold text-sm">6.3k</p><p class="text-white/40 text-xs">Reach</p></div>
+            <div><p class="text-white font-bold text-sm">489</p><p class="text-white/40 text-xs">Clicks</p></div>
+            <div><p class="text-green-400 font-bold text-sm">37</p><p class="text-white/40 text-xs">Leads</p></div>
           </div>
         </div>
       </div>
@@ -1649,8 +1715,8 @@ function landingPage(): string {
         <div class="flex items-center gap-3">
           <img src="https://i.pravatar.cc/48?img=11" alt="" class="w-10 h-10 rounded-full"/>
           <div>
-            <p class="font-bold text-gray-900 text-sm">Carlos Martinez</p>
-            <p class="text-gray-400 text-xs">🌳 Martinez Tree Service · Dallas, TX</p>
+            <p class="font-bold text-gray-900 text-sm">Carlos Rey</p>
+            <p class="text-gray-400 text-xs">🌳 <a href="https://reytreeservice.com" rel="dofollow" target="_blank" class="hover:underline">Rey Tree Service</a> · Memphis, TN</p>
           </div>
         </div>
       </div>
@@ -1662,8 +1728,8 @@ function landingPage(): string {
         <div class="flex items-center gap-3">
           <img src="https://i.pravatar.cc/48?img=5" alt="" class="w-10 h-10 rounded-full"/>
           <div>
-            <p class="font-bold text-gray-900 text-sm">Maria Gonzalez</p>
-            <p class="text-gray-400 text-xs">🎉 FunTime Party Rentals · Houston, TX</p>
+            <p class="font-bold text-gray-900 text-sm">Juan C.</p>
+            <p class="text-gray-400 text-xs">🎉 <a href="https://tikyjumps.com" rel="dofollow" target="_blank" class="hover:underline">Tiky Jumps</a> · Memphis, TN</p>
           </div>
         </div>
       </div>
