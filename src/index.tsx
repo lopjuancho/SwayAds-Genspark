@@ -249,7 +249,7 @@ function landingPage(): string {
             class="logo-img"
             onload="this.style.opacity='1'"
             onerror="this.style.display='none'; document.getElementById('nav-logo-fallback').style.display='flex'"
-            style="opacity:0; transition:opacity 0.3s; height:44px; width:auto; filter:brightness(0) invert(1)"
+            style="opacity:0; transition:opacity 0.3s; height:56px; width:auto;"
           />
           <span id="nav-logo-fallback" class="logo-fallback">
             <span class="text-2xl font-black"><span class="sway-text">Sway</span><span class="text-gray-900">Ads</span></span>
@@ -1868,7 +1868,7 @@ function landingPage(): string {
           <img
             src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaafd4b2a27449ddba2d19.png"
             alt="SwayAds"
-            style="height:40px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
+            style="height:56px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
             onload="this.style.opacity='1'"
             onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex'"
           />
@@ -1942,16 +1942,16 @@ function landingPage(): string {
   const menuBtn   = document.getElementById('menu-btn');
 
   function setNavDark() {
-    // Dark hero bg: white text + white logo
+    // Dark hero bg: natural logo + white text
     navbar.classList.remove('nav-scroll');
-    if (navLogo) navLogo.style.filter = 'brightness(0) invert(1)';
+    if (navLogo) navLogo.style.filter = 'none';
     navLinks.forEach(l => { l.style.color = 'rgba(255,255,255,0.8)'; });
     if (menuBtn) menuBtn.style.color = '#fff';
   }
   function setNavLight() {
-    // Scrolled: keep dark bg + white logo + white text
+    // Scrolled: keep dark bg + natural logo + white text
     navbar.classList.add('nav-scroll');
-    if (navLogo) navLogo.style.filter = 'brightness(0) invert(1)';
+    if (navLogo) navLogo.style.filter = 'none';
     navLinks.forEach(l => { l.style.color = 'rgba(255,255,255,0.85)'; });
     if (menuBtn) menuBtn.style.color = '#fff';
   }
