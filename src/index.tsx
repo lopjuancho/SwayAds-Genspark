@@ -238,7 +238,7 @@ function landingPage(): string {
      ============================================================ -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 md:h-18">
+    <div class="flex items-center justify-between h-20 md:h-24">
       <!-- Logo -->
       <div class="flex items-center gap-2 flex-shrink-0">
         <a href="/" class="flex items-center gap-2">
@@ -249,7 +249,7 @@ function landingPage(): string {
             class="logo-img"
             onload="this.style.opacity='1'"
             onerror="this.style.display='none'; document.getElementById('nav-logo-fallback').style.display='flex'"
-            style="opacity:0; transition:opacity 0.3s; height:72px; width:auto;"
+            style="opacity:0; transition:opacity 0.3s; height:90px; width:auto;"
           />
           <span id="nav-logo-fallback" class="logo-fallback">
             <span class="text-2xl font-black"><span class="sway-text">Sway</span><span class="text-gray-900">Ads</span></span>
@@ -316,7 +316,7 @@ function landingPage(): string {
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
           Launch Profitable<br/>
-          <span class="sway-text">LOCAL</span> <span class="text-white">Ad Campaigns</span><br/>
+          <span class="sway-text">Ad Campaigns</span><br/>
           in Minutes, Not Months
         </h1>
 
@@ -1868,7 +1868,7 @@ function landingPage(): string {
           <img
             src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaafd4b2a27449ddba2d19.png"
             alt="SwayAds"
-            style="height:72px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
+            style="height:90px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
             onload="this.style.opacity='1'"
             onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex'"
           />
