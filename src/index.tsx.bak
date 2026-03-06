@@ -11,11 +11,6 @@ app.get('/', (c) => {
   return c.html(landingPage())
 })
 
-// Spanish landing page
-app.get('/es', (c) => {
-  return c.html(landingPageES())
-})
-
 function landingPage(): string {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -415,7 +410,7 @@ function landingPage(): string {
         <!-- Lawn Care ad card - bottom left -->
         <div class="ad-card bg-white w-52 absolute bottom-8 left-0 float-3 z-10">
           <div class="relative h-28 overflow-hidden">
-            <img src="https://www.genspark.ai/api/files/s/m4Hea4hg" alt="Lawn Care" class="w-full h-full object-cover"/>
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=150&fit=crop&crop=center" alt="Lawn Care" class="w-full h-full object-cover"/>
             <div class="absolute top-2 left-2">
               <span class="text-xs bg-green-600 text-white px-1.5 py-0.5 rounded font-semibold">Google Ad</span>
             </div>
@@ -706,7 +701,7 @@ function landingPage(): string {
             <!-- Template 1: Roofing -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://www.genspark.ai/api/files/s/ty4I74sU" alt="Roofing" class="w-full h-full object-cover"/>
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=200&h=120&fit=crop&crop=center" alt="Roofing" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Storm Damage? We Fix It Fast</p>
                 </div>
@@ -719,7 +714,7 @@ function landingPage(): string {
             <!-- Template 2: Party Rentals -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://www.genspark.ai/api/files/s/OHLR0Yxg" alt="Party Rentals" class="w-full h-full object-cover"/>
+                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=200&h=120&fit=crop&crop=center" alt="Party Rentals" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Book Your Party Today!</p>
                 </div>
@@ -894,7 +889,7 @@ function landingPage(): string {
       <!-- Party Rentals -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://www.genspark.ai/api/files/s/OHLR0Yxg" alt="Party Rentals" class="w-full h-44 object-cover"/>
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&h=220&fit=crop&crop=center" alt="Party Rentals" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">Instagram</span>
           </div>
@@ -927,7 +922,7 @@ function landingPage(): string {
       <!-- Roof Services -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://www.genspark.ai/api/files/s/ty4I74sU" alt="Roofing" class="w-full h-44 object-cover"/>
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&h=220&fit=crop&crop=center" alt="Roofing" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded">Google Ad</span>
           </div>
@@ -960,7 +955,7 @@ function landingPage(): string {
       <!-- Lawn Care -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://www.genspark.ai/api/files/s/m4Hea4hg" alt="Lawn Care" class="w-full h-44 object-cover"/>
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=220&fit=crop&crop=center" alt="Lawn Care" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Facebook Ad</span>
           </div>
