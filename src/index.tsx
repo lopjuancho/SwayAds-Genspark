@@ -310,9 +310,9 @@ function landingPage(): string {
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
-          Ads That Actually<br/>
-          <span class="sway-text">Grow Your</span><br/>
-          Local Business
+          Launch Profitable<br/>
+          <span class="sway-text">Local Ad Campaigns</span><br/>
+          in Minutes, Not Months
         </h1>
 
         <p class="text-lg text-white/70 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
@@ -1266,106 +1266,348 @@ function landingPage(): string {
      PRICING
      ============================================================ -->
 <section id="pricing" class="section-gray py-20 lg:py-28">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-14 reveal">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- Header -->
+    <div class="text-center mb-6 reveal">
       <span class="sway-text text-sm font-bold uppercase tracking-widest">Pricing</span>
       <h2 class="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4">Simple, Transparent Pricing</h2>
       <p class="text-gray-500 text-lg max-w-xl mx-auto">No hidden fees. No long-term contracts. Cancel anytime.</p>
-      <!-- Toggle -->
-      <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full p-1 mt-6">
-        <button id="monthly-btn" onclick="togglePricing('monthly')" class="px-4 py-1.5 rounded-full text-sm font-semibold bg-purple-600 text-white transition-all">Monthly</button>
-        <button id="annual-btn" onclick="togglePricing('annual')" class="px-4 py-1.5 rounded-full text-sm font-semibold text-gray-600 transition-all">
-          Annual <span class="text-green-600 font-bold text-xs">Save 30%</span>
+    </div>
+
+    <!-- Tab switcher: DIY / Managed -->
+    <div class="flex justify-center mb-12 reveal">
+      <div class="inline-flex bg-white border border-gray-200 rounded-2xl p-1.5 shadow-sm gap-1">
+        <button id="tab-diy" onclick="switchTab('diy')"
+          class="px-7 py-2.5 rounded-xl text-sm font-bold transition-all bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-md">
+          🤖 DIY — Self-Serve
+        </button>
+        <button id="tab-managed" onclick="switchTab('managed')"
+          class="px-7 py-2.5 rounded-xl text-sm font-bold transition-all text-gray-500 hover:text-gray-700">
+          🎯 Managed — Done For You
         </button>
       </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 reveal">
+    <!-- ── DIY PLANS ── -->
+    <div id="diy-plans">
 
-      <!-- Starter -->
-      <div class="pricing-card bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-        <div class="mb-6">
-          <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Starter</p>
-          <div class="flex items-end gap-1">
-            <span class="text-4xl font-black text-gray-900" id="starter-price">$49</span>
-            <span class="text-gray-400 text-sm mb-1">/mo</span>
-          </div>
-          <p class="text-gray-500 text-sm mt-2">Perfect for getting started with local ads</p>
-        </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>1 Active Campaign</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Facebook & Instagram Ads</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>AI Ad Copy Generator</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>50 Ad Templates</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Basic Analytics Dashboard</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Email Support</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-400"><i class="fas fa-times text-gray-300 w-4"></i>Google Ads</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-400"><i class="fas fa-times text-gray-300 w-4"></i>Automated A/B Testing</li>
-        </ul>
-        <a href="https://my.swayads.com" class="block w-full text-center border-2 border-purple-600 text-purple-600 font-bold py-3 rounded-xl hover:bg-purple-50 transition-colors text-sm">
-          Start Free Trial
-        </a>
+      <!-- DIY label -->
+      <div class="text-center mb-8 reveal">
+        <span class="inline-flex items-center gap-2 bg-purple-50 text-purple-700 border border-purple-200 rounded-full px-4 py-1.5 text-sm font-semibold">
+          <i class="fas fa-robot"></i> You run the ads — AI does the heavy lifting
+        </span>
       </div>
 
-      <!-- Growth - Most Popular -->
-      <div class="pricing-card relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-200/50" style="background: linear-gradient(145deg, #1a0533, #0d1a3a);">
-        <!-- Popular badge -->
-        <div class="sway-gradient text-white text-xs font-bold text-center py-2 tracking-wider uppercase">
-          ⭐ Most Popular
-        </div>
-        <div class="p-8">
-          <div class="mb-6">
-            <p class="text-sm font-semibold text-white/60 uppercase tracking-wide mb-2">Growth</p>
-            <div class="flex items-end gap-1">
-              <span class="text-4xl font-black text-white" id="growth-price">$97</span>
-              <span class="text-white/50 text-sm mb-1">/mo</span>
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+
+        <!-- DIY Starter -->
+        <div class="pricing-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Starter</p>
+              <span class="text-xs bg-blue-50 text-blue-600 font-semibold px-2.5 py-1 rounded-full">DIY</span>
             </div>
-            <p class="text-white/60 text-sm mt-2">Most popular for service businesses</p>
+            <div class="flex items-end gap-1 mt-3 mb-1">
+              <span class="text-4xl font-black text-gray-900">$147</span>
+              <span class="text-gray-400 text-sm mb-1.5">/mo</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-1">One-time setup: <span class="font-semibold text-gray-700">$147 DIY</span></p>
+            <!-- Channels -->
+            <div class="mt-4 mb-5 p-3 bg-gray-50 rounded-xl">
+              <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Channels</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-facebook-f text-blue-600"></i> Facebook
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-instagram text-pink-600"></i> Instagram
+                </span>
+              </div>
+            </div>
+            <ul class="space-y-2.5 mb-8">
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Unlimited campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>AI creatives</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>AI meme generator</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>AI avatars</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Templates library</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Audience generator</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Ad creative generator</li>
+            </ul>
+            <a href="https://my.swayads.com" class="block w-full text-center border-2 border-purple-600 text-purple-600 font-bold py-3 rounded-xl hover:bg-purple-50 transition-colors text-sm">
+              Get Started
+            </a>
           </div>
-          <ul class="space-y-3 mb-8">
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>5 Active Campaigns</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>Facebook, Instagram & Google</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>AI Campaign Builder</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>200+ Ad Templates</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>Advanced Analytics & ROI</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>Automated A/B Testing</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>Lead Tracking & Attribution</li>
-            <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4"></i>Priority Chat Support</li>
-          </ul>
-          <a href="https://my.swayads.com" class="block w-full text-center btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-lg">
-            Start Free Trial
-          </a>
         </div>
+
+        <!-- DIY Growth — Most Popular -->
+        <div class="pricing-card relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-300/40" style="background:linear-gradient(160deg,#1a0533,#0d1a3a);">
+          <div class="sway-gradient text-white text-xs font-bold text-center py-2 tracking-widest uppercase">
+            ⭐ Most Popular
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-sm font-bold text-white/60 uppercase tracking-wide">Growth</p>
+              <span class="text-xs bg-white/10 text-white/80 font-semibold px-2.5 py-1 rounded-full">DIY</span>
+            </div>
+            <div class="flex items-end gap-1 mt-3 mb-1">
+              <span class="text-4xl font-black text-white">$247</span>
+              <span class="text-white/50 text-sm mb-1.5">/mo</span>
+            </div>
+            <p class="text-white/50 text-sm mb-1">One-time setup: <span class="font-semibold text-white/70">$147 DIY</span></p>
+            <!-- Channels -->
+            <div class="mt-4 mb-5 p-3 bg-white/5 rounded-xl border border-white/10">
+              <p class="text-xs font-bold text-white/40 uppercase tracking-wide mb-2">Channels</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-pink-500/20 text-pink-300 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-instagram"></i> Instagram
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-red-500/20 text-red-300 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-google"></i> Google
+                </span>
+              </div>
+            </div>
+            <ul class="space-y-2.5 mb-8">
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Everything in Starter</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Cross-platform campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>AI optimization</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Advanced targeting</li>
+            </ul>
+            <a href="https://my.swayads.com" class="block w-full text-center btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-lg">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- DIY Pro -->
+        <div class="pricing-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Pro</p>
+              <span class="text-xs bg-purple-50 text-purple-600 font-semibold px-2.5 py-1 rounded-full">DIY</span>
+            </div>
+            <div class="flex items-end gap-1 mt-3 mb-1">
+              <span class="text-4xl font-black text-gray-900">$497</span>
+              <span class="text-gray-400 text-sm mb-1.5">/mo</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-1">One-time setup: <span class="font-semibold text-gray-700">$147 DIY</span></p>
+            <!-- Channels -->
+            <div class="mt-4 mb-5 p-3 bg-gray-50 rounded-xl">
+              <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">11 Channels</p>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full"><i class="fab fa-facebook-f mr-1"></i>Meta</span>
+                <span class="text-xs font-semibold bg-red-100 text-red-700 px-2 py-0.5 rounded-full"><i class="fab fa-google mr-1"></i>Google</span>
+                <span class="text-xs font-semibold bg-black text-white px-2 py-0.5 rounded-full"><i class="fab fa-tiktok mr-1"></i>TikTok</span>
+                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full"><i class="fab fa-linkedin-in mr-1"></i>LinkedIn</span>
+                <span class="text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full"><i class="fas fa-music mr-1"></i>Spotify</span>
+                <span class="text-xs font-semibold bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Bing</span>
+                <span class="text-xs font-semibold bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">Snapchat</span>
+                <span class="text-xs font-semibold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full">Direct Mail</span>
+                <span class="text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">+ Future</span>
+              </div>
+            </div>
+            <ul class="space-y-2.5 mb-8">
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Omnichannel campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Unlimited creatives</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Full AI creative studio</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Advanced optimization tools</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Full template library</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Audience generator</li>
+            </ul>
+            <a href="https://my.swayads.com" class="block w-full text-center border-2 border-gray-900 text-gray-900 font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /diy grid -->
+    </div><!-- /diy-plans -->
+
+    <!-- ── MANAGED PLANS ── -->
+    <div id="managed-plans" class="hidden">
+
+      <!-- Managed label -->
+      <div class="text-center mb-8 reveal">
+        <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 border border-green-200 rounded-full px-4 py-1.5 text-sm font-semibold">
+          <i class="fas fa-headset"></i> Our experts run everything — you just approve
+        </span>
       </div>
 
-      <!-- Agency -->
-      <div class="pricing-card bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-        <div class="mb-6">
-          <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Agency</p>
-          <div class="flex items-end gap-1">
-            <span class="text-4xl font-black text-gray-900" id="agency-price">$249</span>
-            <span class="text-gray-400 text-sm mb-1">/mo</span>
+      <div class="grid md:grid-cols-3 gap-6 reveal">
+
+        <!-- Managed Starter -->
+        <div class="pricing-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+          <div class="h-1.5 sway-gradient"></div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Managed Starter</p>
+              <span class="text-xs bg-green-50 text-green-600 font-semibold px-2.5 py-1 rounded-full">Managed</span>
+            </div>
+            <div class="flex items-end gap-1 mt-3 mb-4">
+              <span class="text-4xl font-black text-gray-900">$497</span>
+              <span class="text-gray-400 text-sm mb-1.5">/mo</span>
+            </div>
+            <!-- Channels -->
+            <div class="mb-5 p-3 bg-gray-50 rounded-xl">
+              <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Platforms</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-instagram"></i> Instagram
+                </span>
+              </div>
+            </div>
+            <ul class="space-y-2.5 mb-8">
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Campaign setup included</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>2 campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>4 ad sets</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Biweekly optimization</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>AI creative testing</li>
+              <li class="flex items-start gap-2.5 text-sm text-gray-500 mt-3 pt-3 border-t border-gray-100">
+                <i class="fas fa-star text-yellow-400 w-4 mt-0.5 flex-shrink-0"></i>
+                <span>Best for local businesses getting started</span>
+              </li>
+            </ul>
+            <a href="https://my.swayads.com" class="block w-full text-center border-2 border-purple-600 text-purple-600 font-bold py-3 rounded-xl hover:bg-purple-50 transition-colors text-sm">
+              Get Started
+            </a>
           </div>
-          <p class="text-gray-500 text-sm mt-2">For agencies managing multiple clients</p>
         </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Unlimited Campaigns</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>All Ad Platforms</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Up to 25 Client Accounts</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>White-label Reports</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>API Access</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Dedicated Account Manager</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Custom Onboarding</li>
-          <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4"></i>Phone Support</li>
-        </ul>
-        <a href="https://my.swayads.com" class="block w-full text-center border-2 border-gray-900 text-gray-900 font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm">
-          Start Free Trial
-        </a>
+
+        <!-- Managed Growth — Most Popular -->
+        <div class="pricing-card relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-300/40" style="background:linear-gradient(160deg,#1a0533,#0d1a3a);">
+          <div class="sway-gradient text-white text-xs font-bold text-center py-2 tracking-widest uppercase">
+            ⭐ Most Popular
+          </div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-sm font-bold text-white/60 uppercase tracking-wide">Managed Growth</p>
+              <span class="text-xs bg-white/10 text-white/80 font-semibold px-2.5 py-1 rounded-full">Managed</span>
+            </div>
+            <div class="flex items-end gap-1 mt-3 mb-4">
+              <span class="text-4xl font-black text-white">$747</span>
+              <span class="text-white/50 text-sm mb-1.5">/mo</span>
+            </div>
+            <!-- Channels -->
+            <div class="mb-5 p-3 bg-white/5 rounded-xl border border-white/10">
+              <p class="text-xs font-bold text-white/40 uppercase tracking-wide mb-2">Platforms</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-facebook-f"></i> Meta
+                </span>
+                <span class="flex items-center gap-1.5 text-xs font-semibold bg-red-500/20 text-red-300 px-2.5 py-1 rounded-full">
+                  <i class="fab fa-google"></i> Google
+                </span>
+              </div>
+            </div>
+            <ul class="space-y-2.5 mb-8">
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Campaign setup included</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>4 campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>8 ad sets</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Weekly optimization</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>AI creative testing</li>
+              <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Conversion tracking</li>
+            </ul>
+            <a href="https://my.swayads.com" class="block w-full text-center btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-lg">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- Managed Scale -->
+        <div class="pricing-card bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+          <div class="h-1.5 bg-gradient-to-r from-orange-400 to-red-500"></div>
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-1">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Managed Scale</p>
+              <span class="text-xs bg-orange-50 text-orange-600 font-semibold px-2.5 py-1 rounded-full">Managed</span>
+            </div>
+            <div class="flex items-end gap-1 mt-3 mb-4">
+              <span class="text-4xl font-black text-gray-900">$997</span>
+              <span class="text-gray-400 text-sm mb-1.5">/mo</span>
+            </div>
+            <!-- Channels -->
+            <div class="mb-5 p-3 bg-gray-50 rounded-xl">
+              <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Platforms</p>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full"><i class="fab fa-facebook-f mr-1"></i>Meta</span>
+                <span class="text-xs font-semibold bg-red-100 text-red-700 px-2 py-0.5 rounded-full"><i class="fab fa-google mr-1"></i>Google</span>
+                <span class="text-xs font-semibold bg-black text-white px-2 py-0.5 rounded-full"><i class="fab fa-tiktok mr-1"></i>TikTok</span>
+              </div>
+            </div>
+            <ul class="space-y-2.5 mb-8">
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>6 campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>12 ad sets</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Weekly optimization</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Creative testing</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Scaling strategy</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Detailed reporting</li>
+            </ul>
+            <a href="https://my.swayads.com" class="block w-full text-center border-2 border-gray-900 text-gray-900 font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /managed grid -->
+    </div><!-- /managed-plans -->
+
+    <!-- ── ADD-ONS ── -->
+    <div class="mt-12 reveal">
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-8 py-5 border-b border-gray-100 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl sway-gradient flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-plus text-white text-sm"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Add-Ons</h3>
+            <p class="text-gray-400 text-xs">Customize any plan with extra power</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
+          <div class="p-6 text-center hover:bg-purple-50/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-bullhorn text-purple-600"></i>
+            </div>
+            <p class="text-2xl font-black text-gray-900 mb-0.5">$150<span class="text-gray-400 text-sm font-normal">/mo</span></p>
+            <p class="text-sm font-semibold text-gray-700">Extra Campaign</p>
+            <p class="text-xs text-gray-400 mt-1">Add more campaigns to any plan</p>
+          </div>
+          <div class="p-6 text-center hover:bg-blue-50/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-layer-group text-blue-600"></i>
+            </div>
+            <p class="text-2xl font-black text-gray-900 mb-0.5">$200<span class="text-gray-400 text-sm font-normal">/mo</span></p>
+            <p class="text-sm font-semibold text-gray-700">Extra Platform</p>
+            <p class="text-xs text-gray-400 mt-1">Expand to an additional ad channel</p>
+          </div>
+          <div class="p-6 text-center hover:bg-green-50/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-image text-green-600"></i>
+            </div>
+            <p class="text-2xl font-black text-gray-900 mb-0.5">$100<span class="text-gray-400 text-sm font-normal">/mo</span></p>
+            <p class="text-sm font-semibold text-gray-700">Creative Production</p>
+            <p class="text-xs text-gray-400 mt-1">Extra ad creatives each month</p>
+          </div>
+          <div class="p-6 text-center hover:bg-orange-50/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center mx-auto mb-3">
+              <i class="fas fa-file-alt text-orange-600"></i>
+            </div>
+            <p class="text-2xl font-black text-gray-900 mb-0.5">$300<span class="text-gray-400 text-sm font-normal"> once</span></p>
+            <p class="text-sm font-semibold text-gray-700">Landing Page Build</p>
+            <p class="text-xs text-gray-400 mt-1">High-converting page for your ads</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Guarantee -->
-    <div class="mt-10 text-center bg-white rounded-2xl p-6 border border-green-100 reveal">
+    <div class="mt-8 text-center bg-white rounded-2xl p-6 border border-green-100 shadow-sm reveal">
       <div class="flex items-center justify-center gap-3 flex-wrap">
         <i class="fas fa-shield-alt text-green-500 text-2xl"></i>
         <div class="text-left">
@@ -1374,6 +1616,7 @@ function landingPage(): string {
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -1720,25 +1963,27 @@ function landingPage(): string {
   }
 
   // ── Pricing toggle ──
-  const prices = {
-    starter: { monthly: '$49', annual: '$34' },
-    growth:  { monthly: '$97', annual: '$68' },
-    agency:  { monthly: '$249', annual: '$174' },
-  };
-  let currentMode = 'monthly';
-  function togglePricing(mode) {
-    currentMode = mode;
-    document.getElementById('starter-price').textContent = prices.starter[mode];
-    document.getElementById('growth-price').textContent  = prices.growth[mode];
-    document.getElementById('agency-price').textContent  = prices.agency[mode];
-    const mBtn = document.getElementById('monthly-btn');
-    const aBtn = document.getElementById('annual-btn');
-    if (mode === 'monthly') {
-      mBtn.classList.add('bg-purple-600','text-white'); mBtn.classList.remove('text-gray-600');
-      aBtn.classList.remove('bg-purple-600','text-white'); aBtn.classList.add('text-gray-600');
+  // ── Pricing tab switcher: DIY / Managed ──
+  function switchTab(tab) {
+    const diyPlans     = document.getElementById('diy-plans');
+    const managedPlans = document.getElementById('managed-plans');
+    const diyBtn       = document.getElementById('tab-diy');
+    const managedBtn   = document.getElementById('tab-managed');
+
+    if (tab === 'diy') {
+      diyPlans.classList.remove('hidden');
+      managedPlans.classList.add('hidden');
+      diyBtn.classList.add('bg-gradient-to-r','from-purple-600','to-blue-500','text-white','shadow-md');
+      diyBtn.classList.remove('text-gray-500');
+      managedBtn.classList.remove('bg-gradient-to-r','from-purple-600','to-blue-500','text-white','shadow-md');
+      managedBtn.classList.add('text-gray-500');
     } else {
-      aBtn.classList.add('bg-purple-600','text-white'); aBtn.classList.remove('text-gray-600');
-      mBtn.classList.remove('bg-purple-600','text-white'); mBtn.classList.add('text-gray-600');
+      managedPlans.classList.remove('hidden');
+      diyPlans.classList.add('hidden');
+      managedBtn.classList.add('bg-gradient-to-r','from-purple-600','to-blue-500','text-white','shadow-md');
+      managedBtn.classList.remove('text-gray-500');
+      diyBtn.classList.remove('bg-gradient-to-r','from-purple-600','to-blue-500','text-white','shadow-md');
+      diyBtn.classList.add('text-gray-500');
     }
   }
 
