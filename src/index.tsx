@@ -42,7 +42,7 @@ function landingPage(): string {
     .glass { background: rgba(255,255,255,0.07); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.12); }
 
     /* Nav */
-    .nav-scroll { background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+    .nav-scroll { background: rgba(10,10,20,0.92); backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
 
     /* Animated gradient hero bg */
     .hero-bg {
@@ -1949,11 +1949,11 @@ function landingPage(): string {
     if (menuBtn) menuBtn.style.color = '#fff';
   }
   function setNavLight() {
-    // Scrolled: white bg + colored logo + dark text
+    // Scrolled: keep dark bg + white logo + white text
     navbar.classList.add('nav-scroll');
-    if (navLogo) navLogo.style.filter = 'none';
-    navLinks.forEach(l => { l.style.color = '#4b5563'; });
-    if (menuBtn) menuBtn.style.color = '#374151';
+    if (navLogo) navLogo.style.filter = 'brightness(0) invert(1)';
+    navLinks.forEach(l => { l.style.color = 'rgba(255,255,255,0.85)'; });
+    if (menuBtn) menuBtn.style.color = '#fff';
   }
 
   setNavDark(); // default on load
