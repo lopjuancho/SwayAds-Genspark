@@ -243,7 +243,7 @@ function landingPage(): string {
       <div class="flex items-center gap-2 flex-shrink-0">
         <a href="/" class="flex items-center gap-2">
           <img
-            src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa392b003fa99b3dfb5bf.png"
+            src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaafd4b2a27449ddba2d19.png"
             alt="SwayAds"
             id="nav-logo-img"
             class="logo-img"
@@ -1866,7 +1866,7 @@ function landingPage(): string {
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <img
-            src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa392b003fa99b3dfb5bf.png"
+            src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaafd4b2a27449ddba2d19.png"
             alt="SwayAds"
             style="height:40px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
             onload="this.style.opacity='1'"
