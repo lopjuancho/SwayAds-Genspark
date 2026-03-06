@@ -243,7 +243,7 @@ function landingPage(): string {
       <div class="flex items-center gap-2 flex-shrink-0">
         <a href="/" class="flex items-center gap-2">
           <img
-            src="https://www.genspark.ai/api/files/s/fCLFvPGj"
+            src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa392b003fa99b3dfb5bf.png"
             alt="SwayAds"
             id="nav-logo-img"
             class="logo-img"
@@ -719,7 +719,7 @@ function landingPage(): string {
             <!-- Template 2: Party Rentals -->
             <div class="ad-card bg-white cursor-pointer">
               <div class="relative h-24">
-                <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8ec036702f360f0c276a.png" alt="Tiky Jumps Party Rentals" class="w-full h-full object-cover"/>
+                <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa3387bdf38dea6951b7a.jpg" alt="Tiky Jumps Party Rentals" class="w-full h-full object-cover"/>
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2">
                   <p class="text-white text-xs font-bold leading-tight">Book Your Party Today!</p>
                 </div>
@@ -894,7 +894,7 @@ function landingPage(): string {
       <!-- Party Rentals -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa8ec036702f360f0c276a.png" alt="Tiky Jumps Memphis" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa3387bdf38dea6951b7a.jpg" alt="Tiky Jumps Memphis" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">Instagram</span>
           </div>
@@ -1059,7 +1059,7 @@ function landingPage(): string {
       <!-- Tiky Jumps 2nd card -->
       <div class="glass rounded-2xl overflow-hidden feature-card">
         <div class="relative">
-          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aa9212b2a274061db6700b.png" alt="Tiky Jumps Memphis" class="w-full h-44 object-cover"/>
+          <img src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa3387bdf38dea6951b7a.jpg" alt="Tiky Jumps Memphis" class="w-full h-44 object-cover"/>
           <div class="absolute top-3 left-3 flex gap-2">
             <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Facebook Ad</span>
           </div>
@@ -1932,7 +1932,7 @@ function landingPage(): string {
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <img
-            src="https://www.genspark.ai/api/files/s/fCLFvPGj"
+            src="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaa392b003fa99b3dfb5bf.png"
             alt="SwayAds"
             style="height:40px;width:auto;object-fit:contain;opacity:0;transition:opacity 0.3s"
             onload="this.style.opacity='1'"
