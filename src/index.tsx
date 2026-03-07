@@ -1314,10 +1314,10 @@ function landingPage(): string {
               <span class="text-xs bg-blue-50 text-blue-600 font-semibold px-2.5 py-1 rounded-full">DIY</span>
             </div>
             <div class="flex items-end gap-1 mt-3 mb-1">
-              <span class="text-4xl font-black text-gray-900">$147</span>
+              <span class="text-4xl font-black text-gray-900">$97</span>
               <span class="text-gray-400 text-sm mb-1.5">/mo</span>
             </div>
-            <p class="text-gray-500 text-sm mb-1">One-time setup: <span class="font-semibold text-gray-700">$147 DIY</span></p>
+            <p class="text-gray-500 text-sm mb-1">One-time setup: <span class="font-semibold text-gray-700">$47</span></p>
             <!-- Channels -->
             <div class="mt-4 mb-5 p-3 bg-gray-50 rounded-xl">
               <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Channels</p>
@@ -1339,8 +1339,8 @@ function landingPage(): string {
               <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Audience generator</li>
               <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Ad creative generator</li>
             </ul>
-            <a href="https://my.swayads.com" class="block w-full text-center border-2 border-purple-600 text-purple-600 font-bold py-3 rounded-xl hover:bg-purple-50 transition-colors text-sm">
-              Get Started
+            <a href="https://my.swayads.com" class="block w-full text-center bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold py-3 rounded-xl hover:opacity-90 transition-opacity text-sm shadow-md">
+              🎉 Start 7-Day Free Trial
             </a>
           </div>
         </div>
@@ -1356,10 +1356,10 @@ function landingPage(): string {
               <span class="text-xs bg-white/10 text-white/80 font-semibold px-2.5 py-1 rounded-full">DIY</span>
             </div>
             <div class="flex items-end gap-1 mt-3 mb-1">
-              <span class="text-4xl font-black text-white">$247</span>
+              <span class="text-4xl font-black text-white">$147</span>
               <span class="text-white/50 text-sm mb-1.5">/mo</span>
             </div>
-            <p class="text-white/50 text-sm mb-1">One-time setup: <span class="font-semibold text-white/70">$147 DIY</span></p>
+            <p class="text-white/50 text-sm mb-1">One-time setup: <span class="font-semibold text-white/80">$47</span></p>
             <!-- Channels -->
             <div class="mt-4 mb-5 p-3 bg-white/5 rounded-xl border border-white/10">
               <p class="text-xs font-bold text-white/40 uppercase tracking-wide mb-2">Channels</p>
@@ -1382,7 +1382,7 @@ function landingPage(): string {
               <li class="flex items-center gap-2.5 text-sm text-white/80"><i class="fas fa-check text-purple-400 w-4 flex-shrink-0"></i>Advanced targeting</li>
             </ul>
             <a href="https://my.swayads.com" class="block w-full text-center btn-primary text-white font-bold py-3 rounded-xl text-sm shadow-lg">
-              Get Started
+              🎉 Start 7-Day Free Trial
             </a>
           </div>
         </div>
@@ -1395,10 +1395,10 @@ function landingPage(): string {
               <span class="text-xs bg-purple-50 text-purple-600 font-semibold px-2.5 py-1 rounded-full">DIY</span>
             </div>
             <div class="flex items-end gap-1 mt-3 mb-1">
-              <span class="text-4xl font-black text-gray-900">$497</span>
+              <span class="text-4xl font-black text-gray-900">$247</span>
               <span class="text-gray-400 text-sm mb-1.5">/mo</span>
             </div>
-            <p class="text-gray-500 text-sm mb-1">One-time setup: <span class="font-semibold text-gray-700">$147 DIY</span></p>
+            <p class="text-gray-500 text-sm mb-1">One-time setup: <span class="font-semibold text-gray-700">$47</span></p>
             <!-- Channels -->
             <div class="mt-4 mb-5 p-3 bg-gray-50 rounded-xl">
               <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">11 Channels</p>
@@ -1423,7 +1423,7 @@ function landingPage(): string {
               <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Audience generator</li>
             </ul>
             <a href="https://my.swayads.com" class="block w-full text-center border-2 border-gray-900 text-gray-900 font-bold py-3 rounded-xl hover:bg-gray-50 transition-colors text-sm">
-              Get Started
+              🎉 Start 7-Day Free Trial
             </a>
           </div>
         </div>
@@ -1451,10 +1451,11 @@ function landingPage(): string {
               <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Managed Starter</p>
               <span class="text-xs bg-green-50 text-green-600 font-semibold px-2.5 py-1 rounded-full">Managed</span>
             </div>
-            <div class="flex items-end gap-1 mt-3 mb-4">
-              <span class="text-4xl font-black text-gray-900">$497</span>
+            <div class="flex items-end gap-1 mt-3 mb-1">
+              <span class="text-4xl font-black text-gray-900">$197</span>
               <span class="text-gray-400 text-sm mb-1.5">/mo</span>
             </div>
+            <p class="text-gray-500 text-sm mb-4">One-time setup: <span class="font-semibold text-gray-700">$47</span></p>
             <!-- Channels -->
             <div class="mb-5 p-3 bg-gray-50 rounded-xl">
               <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Platforms</p>
@@ -1485,6 +1486,7 @@ function landingPage(): string {
         </div>
 
         <!-- Managed Growth — Most Popular -->
+
         <div class="pricing-card relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-300/40" style="background:linear-gradient(160deg,#1a0533,#0d1a3a);">
           <div class="sway-gradient text-white text-xs font-bold text-center py-2 tracking-widest uppercase">
             ⭐ Most Popular
@@ -1494,10 +1496,11 @@ function landingPage(): string {
               <p class="text-sm font-bold text-white/60 uppercase tracking-wide">Managed Growth</p>
               <span class="text-xs bg-white/10 text-white/80 font-semibold px-2.5 py-1 rounded-full">Managed</span>
             </div>
-            <div class="flex items-end gap-1 mt-3 mb-4">
-              <span class="text-4xl font-black text-white">$747</span>
+            <div class="flex items-end gap-1 mt-3 mb-1">
+              <span class="text-4xl font-black text-white">$297</span>
               <span class="text-white/50 text-sm mb-1.5">/mo</span>
             </div>
+            <p class="text-white/50 text-sm mb-4">One-time setup: <span class="font-semibold text-white/80">$47</span></p>
             <!-- Channels -->
             <div class="mb-5 p-3 bg-white/5 rounded-xl border border-white/10">
               <p class="text-xs font-bold text-white/40 uppercase tracking-wide mb-2">Platforms</p>
@@ -1532,10 +1535,11 @@ function landingPage(): string {
               <p class="text-sm font-bold text-gray-500 uppercase tracking-wide">Managed Scale</p>
               <span class="text-xs bg-orange-50 text-orange-600 font-semibold px-2.5 py-1 rounded-full">Managed</span>
             </div>
-            <div class="flex items-end gap-1 mt-3 mb-4">
-              <span class="text-4xl font-black text-gray-900">$997</span>
+            <div class="flex items-end gap-1 mt-3 mb-1">
+              <span class="text-4xl font-black text-gray-900">$497</span>
               <span class="text-gray-400 text-sm mb-1.5">/mo</span>
             </div>
+            <p class="text-gray-500 text-sm mb-4">One-time setup: <span class="font-semibold text-gray-700">$47</span></p>
             <!-- Channels -->
             <div class="mb-5 p-3 bg-gray-50 rounded-xl">
               <p class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Platforms</p>
@@ -1543,11 +1547,12 @@ function landingPage(): string {
                 <span class="text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full"><i class="fab fa-facebook-f mr-1"></i>Meta</span>
                 <span class="text-xs font-semibold bg-red-100 text-red-700 px-2 py-0.5 rounded-full"><i class="fab fa-google mr-1"></i>Google</span>
                 <span class="text-xs font-semibold bg-black text-white px-2 py-0.5 rounded-full"><i class="fab fa-tiktok mr-1"></i>TikTok</span>
+                <span class="text-xs font-semibold bg-blue-800 text-white px-2 py-0.5 rounded-full"><i class="fab fa-linkedin-in mr-1"></i>LinkedIn</span>
               </div>
             </div>
             <ul class="space-y-2.5 mb-8">
-              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>6 campaigns</li>
-              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>12 ad sets</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>8 campaigns</li>
+              <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>16 ad sets</li>
               <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Weekly optimization</li>
               <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Creative testing</li>
               <li class="flex items-center gap-2.5 text-sm text-gray-700"><i class="fas fa-check text-green-500 w-4 flex-shrink-0"></i>Scaling strategy</li>
