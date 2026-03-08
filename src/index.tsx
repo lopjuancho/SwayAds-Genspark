@@ -28,6 +28,7 @@ function landingPage(): string {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="https://assets.cdn.filesafe.space/QMSEyMqE0DaJ2AFN7ipH/media/69aaafd4b2a27449ddba2d19.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * { font-family: 'Inter', sans-serif; }
@@ -304,7 +305,7 @@ function landingPage(): string {
      ============================================================ -->
 <section class="hero-bg min-h-screen flex flex-col justify-center pt-16 pb-0 relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-    <div class="grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 items-center py-10 lg:py-14">
 
       <!-- Left: Text Content -->
       <div class="text-center lg:text-left relative z-10">
@@ -557,7 +558,7 @@ function landingPage(): string {
 <!-- ============================================================
      PROBLEM SECTION
      ============================================================ -->
-<section class="section-gray py-20 lg:py-28">
+<section class="section-gray py-10 lg:py-14">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-14 reveal">
       <span class="text-red-500 text-sm font-bold uppercase tracking-widest">The Problem</span>
@@ -618,16 +619,16 @@ function landingPage(): string {
 <!-- ============================================================
      FEATURES SECTION
      ============================================================ -->
-<section id="features" class="section-white py-20 lg:py-28">
+<section id="features" class="section-white py-10 lg:py-14">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 reveal">
+    <div class="text-center mb-8 reveal">
       <span class="sway-text text-sm font-bold uppercase tracking-widest">Features</span>
       <h2 class="text-3xl md:text-4xl font-black text-gray-900 mt-3 mb-4">Everything You Need to<br/>Dominate Local Advertising</h2>
       <p class="text-gray-500 text-lg max-w-2xl mx-auto">One platform. All your ad channels. Built for busy business owners who need results, not complexity.</p>
     </div>
 
     <!-- Feature 1: AI Campaign Builder -->
-    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20 reveal">
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-10 reveal">
       <div class="order-2 lg:order-1">
         <div class="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">
           <i class="fas fa-brain"></i> AI Campaign Builder
@@ -697,7 +698,7 @@ function landingPage(): string {
     </div>
 
     <!-- Feature 2: Ad Templates -->
-    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20 reveal">
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-10 reveal">
       <div>
         <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6">
           <!-- Templates Grid Mock -->
@@ -848,7 +849,7 @@ function landingPage(): string {
 <!-- ============================================================
      AD EXAMPLES SECTION (Real Business Types)
      ============================================================ -->
-<section class="section-dark py-20 lg:py-28">
+<section class="section-dark py-10 lg:py-14">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-14 reveal">
       <span class="text-purple-400 text-sm font-bold uppercase tracking-widest">Real Ad Examples</span>
@@ -1042,7 +1043,7 @@ function landingPage(): string {
 <!-- ============================================================
      HOW IT WORKS
      ============================================================ -->
-<section id="how-it-works" class="section-white py-20 lg:py-28">
+<section id="how-it-works" class="section-white py-10 lg:py-14">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-14 reveal">
       <span class="sway-text text-sm font-bold uppercase tracking-widest">How It Works</span>
@@ -1110,7 +1111,7 @@ function landingPage(): string {
 <!-- ============================================================
      VIDEO SECTION — HOW IT WORKS
      ============================================================ -->
-<section id="watch" class="video-section-bg py-20 lg:py-28">
+<section id="watch" class="video-section-bg py-10 lg:py-14">
   <div class="max-w-7xl mx-auto px-4 relative z-10">
 
     <!-- Header -->
@@ -1270,7 +1271,7 @@ function landingPage(): string {
 <!-- ============================================================
      PRICING
      ============================================================ -->
-<section id="pricing" class="section-gray py-20 lg:py-28">
+<section id="pricing" class="section-gray py-10 lg:py-14">
   <div class="max-w-7xl mx-auto px-4">
 
     <!-- Header -->
@@ -1281,7 +1282,7 @@ function landingPage(): string {
     </div>
 
     <!-- Tab switcher: DIY / Managed -->
-    <div class="flex justify-center mb-12 reveal">
+    <div class="flex justify-center mb-8 reveal">
       <div class="inline-flex bg-white border border-gray-200 rounded-2xl p-1.5 shadow-sm gap-1">
         <button id="tab-diy" onclick="switchTab('diy')"
           class="px-7 py-2.5 rounded-xl text-sm font-bold transition-all bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-md">
@@ -1568,7 +1569,7 @@ function landingPage(): string {
     </div><!-- /managed-plans -->
 
     <!-- ── ADD-ONS ── -->
-    <div class="mt-12 reveal">
+    <div class="mt-8 reveal">
       <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div class="px-8 py-5 border-b border-gray-100 flex items-center gap-3">
           <div class="w-9 h-9 rounded-xl sway-gradient flex items-center justify-center flex-shrink-0">
@@ -1633,7 +1634,7 @@ function landingPage(): string {
 <!-- ============================================================
      TESTIMONIALS
      ============================================================ -->
-<section id="testimonials" class="section-white py-20 lg:py-28">
+<section id="testimonials" class="section-white py-10 lg:py-14">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-14 reveal">
       <span class="sway-text text-sm font-bold uppercase tracking-widest">Customer Reviews</span>
@@ -1732,7 +1733,7 @@ function landingPage(): string {
 <!-- ============================================================
      FAQ
      ============================================================ -->
-<section id="faq" class="section-gray py-20 lg:py-28">
+<section id="faq" class="section-gray py-10 lg:py-14">
   <div class="max-w-3xl mx-auto px-4">
     <div class="text-center mb-14 reveal">
       <span class="sway-text text-sm font-bold uppercase tracking-widest">FAQ</span>
@@ -1832,7 +1833,7 @@ function landingPage(): string {
 <!-- ============================================================
      FINAL CTA SECTION
      ============================================================ -->
-<section class="hero-bg py-24 relative overflow-hidden">
+<section class="hero-bg py-12 relative overflow-hidden">
   <div class="absolute inset-0 opacity-20">
     <div class="absolute top-10 left-10 w-64 h-64 rounded-full sway-gradient blur-3xl"></div>
     <div class="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-blue-500 blur-3xl"></div>
@@ -1865,9 +1866,9 @@ function landingPage(): string {
 <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="bg-gray-950 text-white py-16">
+<footer class="bg-gray-950 text-white py-10">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="grid md:grid-cols-4 gap-10 mb-12">
+    <div class="grid md:grid-cols-4 gap-10 mb-8">
       <div class="md:col-span-1">
         <div class="flex items-center gap-2 mb-4">
           <img
